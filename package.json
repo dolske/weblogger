@@ -1,0 +1,31 @@
+{
+  "name": "weblogger",
+  "fullName": "Web Logger",
+  "id": "jid1-ZPhHZyAZg3V8tQ",
+  "description": "Enables a web page to send log messages to a local file.",
+  "author": "Justin Dolske",
+  "license": "MIT",
+  "version": "0.5",
+
+  "preferences": [{
+      "name": "logDir",
+      "title": "Directory for logs",
+      "description": "The location where the log files will be written.",
+      "type": "directory",
+      "value": ""
+  },
+  {
+      "name": "allowedHost",
+      "title": "Allowed host",
+      "description": "Allow logging from this host (eg 'http://site.com'). You can use '*' to allow any host, but that is dangerous.",
+      "type": "string",
+      "value": ""
+  },
+  {
+      "name": "rebootOdds",
+      "title": "Percent chance of rebooting after logging",
+      "description": "If non-zero, this is the percent chance to reboot after logging a message",
+      "type": "integer",
+      "value": 0
+  }]
+}
