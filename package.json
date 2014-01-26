@@ -22,10 +22,10 @@
       "value": ""
   },
   {
-      "name": "rebootOdds",
-      "title": "Percent chance of rebooting after logging",
-      "description": "If non-zero, this is the percent chance to reboot after logging a message",
-      "type": "integer",
-      "value": 0
+      "name": "allowReboot",
+      "title": "Allow webpages to trigger rebooting the system!",
+      "description": "When set, the allowed host will additionally be permitted to reboot the computer (Windows-only).",
+      "type": "bool",
+      "value": false
   }]
 }
