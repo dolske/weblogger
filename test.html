@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<h2>Weblogger tests</h2>
+<button onclick="doTestnum(10);">Append "Hello World"</button>
+<button onclick="doTestnum(11);">Unique "Hello World"</button>
+<button onclick="doTestnum(12);">Reboot!</button>
+<br><br>
+Errors:<br>
+<button onclick="doTestnum(1);">Error 1 (missing prefix)</button>
+<button onclick="doTestnum(2);">Error 2 (missing command)</button>
+<button onclick="doTestnum(3);">Error 3 (unknown command)</button>
+<button onclick="doTestnum(4);">Error 4 (missing message)</button>
+
+<script>
+function doTestnum(testnum) {
+  switch (testnum) {
+    case 1:
+      window.postMessage("garbage", "*");
+    case 2:
+      window.postMessage("weblogger:blah", "*");
+      break;
+    case 3:
+      window.postMessage("weblogger-unknown:blah", "*");
+      break;
+    case 4:
+      window.postMessage("weblogger-append:", "*");
+      break;
+    case 10:
+      window.postMessage("weblogger-append:Hello world!", "*");
+      break;
+    case 11:
+      window.postMessage("weblogger-unique:Hello world!", "*");
+      break;
+    case 12:
+      if (confirm("Are you sure you want to try this?"))
+        window.postMessage("weblogger-reboot:Goodbye world!", "*");
+      break;
+   default:
+      alert("Oops, something done got broke.");
+  }
+}
+
+if (document.location.protocol == "file:") {
+  alert("Oops! This testcase (and weblogger overall) won't work from file:// locations. Sorry.");
+}
+
+</script>
+</html>
